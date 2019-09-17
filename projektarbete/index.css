@@ -97,12 +97,7 @@ button {
 	font-weight: bold;
 	border-radius: 5px;  
 }
-.changingcircle {
-   display: none;
-}
-.changingcircle--expanded {
-   display: block;
-}
+
 @keyframes colors{
    0%      { background-position: 0 0;      }
    100%    { background-position: -613px 0;      }

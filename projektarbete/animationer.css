@@ -1,4 +1,10 @@
 .changingcircle {
+  display: none;
+}
+.changingcircle--expanded {
+  display: block;
+}
+.changingcircle {
     height: 250px;
     width: 250px;
     margin: 100px auto auto auto;
