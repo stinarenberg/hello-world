@@ -1,0 +1,340 @@
+*{
+   box-sizing: border-box;
+}
+body {margin: 0;}
+
+.container {
+   min-height: 100vh;
+   display: grid;
+   grid-template-areas: 
+   "header"
+   "left"
+   "main"
+   "right"
+   "footer"
+}
+.cell-1 {
+   background: url(lights.jpg);
+   grid-area: header;
+   display: grid;
+   grid-template-columns: 2vw 1fr 10fr 1fr 2vw;
+   grid-template-rows: 90px auto;
+   animation: colors 25s infinite linear;
+   align-items: center;
+}
+.cell-2 {
+   background: #222;
+   grid-area: left;
+}
+.cell-3 {
+   background: #222;
+   grid-area: main;
+}
+.cell-4 {
+   background: #222;
+   grid-area: right;
+}
+.cell-5 {
+   background: rgb(70, 61, 53);
+   grid-area: footer;
+   height: 35px;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+}
+.cell {
+   color: white;
+   font-size: 1.5rem;
+   text-align: center;
+   padding: 0;
+}
+.nav {
+   display: none;
+   grid-area: header; 
+   grid-column: 1/6;
+   grid-row: 2;
+   margin: 0;
+   background-color: black;
+}
+
+.navlist {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   display: grid;
+   grid-template-columns: 1fr;
+   height: calc(80vh-70px);
+   align-content: space-between;
+}
+.nav-item {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 3px;
+}
+.nav-item-link {
+  color: white;
+  text-decoration: none;
+  text-align-last: center;
+}
+.hamburger{
+   grid-column: 4;
+   justify-self: end;
+}
+.material-icons{
+   font-size: 1.4em;
+   color: white;
+}
+.changingcircle {
+   height: 250px;
+   width: 250px;
+   margin: 100px auto auto auto;
+   background-color: #581845;
+   animation-name: colorcircle;
+   animation-duration: 5s; 
+   animation-timing-function: ease-out; 
+   animation-delay: 0s;
+   animation-direction: alternate;
+   animation-iteration-count: 2;
+   animation-fill-mode: forwards;
+   animation-play-state: running; 
+ }
+
+/* animations */
+/*Moving picture i header*/
+@keyframes colors{
+   0%      { background-position: 0 0;      }
+   100%    { background-position: -613px 0;      }
+}
+/*animation circle scale*/
+ @keyframes colorcircle {
+   0% {
+      transform: scale(1);
+       background-color: #FFC30F;
+       border-radius: 100%
+   }
+   25% {
+       background-color: #FF5733
+   }
+   50% {
+       background-color: #C70039;
+       border-radius: 0%;
+   }
+   75% {
+       background-color: #900C3F
+   }
+   100% {
+      transform: scale(1.2);
+       background-color: #581845;
+       border-radius: 100%;
+   }
+ } 
+ /* FEL ANIMATION */
+ .changingcircle-2 {
+   height: 250px;
+   width: 250px;
+   margin: 100px auto auto auto;
+   background-color: #581845;
+   animation-name: colorcircle-2;
+   animation-duration: 5s; 
+   animation-timing-function: ease-out; 
+   animation-delay: 0s;
+   animation-direction: alternate;
+   animation-iteration-count: 2;
+   animation-fill-mode: forwards;
+   animation-play-state: running; 
+ }
+.circleDIV{
+   height: 250px;
+   width: 250px;
+}
+.rutan{
+   height: 50px;
+   width: 50px;
+   position: relative;
+   /* animation-name: spinning;
+   animation-duration: 7s; 
+   animation-fill-mode: forwards;
+   animation-timing-function: linear; */
+ }
+/* animations */
+/*Moving picture i header*/
+@keyframes colors{
+   0%      { background-position: 0 0;      }
+   100%    { background-position: -613px 0;      }
+}
+/*animation circle scale*/
+ @keyframes colorcircle-2 {
+   0% {
+      height: 150px;
+      width: 150x;
+       background-color: #FFC30F;
+       border-radius: 100%
+   }
+   25% {
+       background-color: #FF5733
+   }
+   50% {
+       background-color: #C70039;
+       border-radius: 0%;
+   }
+   75% {
+       background-color: #900C3F
+   }
+   100% {
+      height: 500px;
+      width: 500px;
+       background-color: #581845;
+       border-radius: 100%;
+   }
+ } 
+ /* Ruta i sidebar */
+ @keyframes spinning {
+   0% {
+     background-color: green;
+   }
+   50% {
+     transform: translate(200px, 0px) rotate(180deg);
+     background-color: aquamarine;
+   }
+   100%{
+      transform: translate(400px, 0px) rotate(360deg);
+     background-color: chartreuse;
+   }
+ }
+
+/* Tablet */
+@media (min-width: 768px) {
+   .container {
+      min-height: 100vh;
+      grid-template-areas:
+       'header header  header'
+       'left      main    right'
+       'footer footer  footer';
+       grid-template-rows: auto 4fr 35px;
+      grid-template-columns: 1fr 3fr 1fr;
+   }
+.cell-1 {
+   grid-template-rows: 170px auto;
+   }
+   .nav{
+      display: none;
+      grid-column: 1/6;
+      margin: 0;
+      background-color: black;
+
+   }
+  .navlist{
+     display: flex;
+       /* grid-template-columns: repeat(3, 1fr); */
+       justify-content: space-around;
+       grid-template-rows: auto;
+  }
+  @keyframes spinning {
+   0% {
+     background-color: green;
+   }
+   50% {
+     transform: translate(0px, 200px) rotate(180deg);
+     background-color: aquamarine;
+   }
+   100%{
+      transform: translate(0px, 400px) rotate(360deg);
+     background-color: chartreuse;
+   }
+ }
+ }
+ 
+ /* Laptops */
+ @media (min-width: 1024px) {
+   .container {
+      min-height: 100vh;
+      grid-template-areas: 
+      "header header header"
+      "left main right"
+      "footer footer footer";
+      grid-template-rows: auto 4fr 35px;
+      grid-template-columns: 1fr 3fr 1fr;
+   }
+ }
+  
+
+ button {
+   padding: 4px;
+   margin: 50px;
+}
+
+.button {
+	
+	
+	--border-size: 2px;
+	
+	
+	position: relative;
+	padding: 1.5em 3em;
+	border: 0;
+	background: transparent;
+	color: #e55743;
+	text-transform: uppercase;
+	letter-spacing: .25em;
+	cursor: pointer;
+	font-weight: bold;
+	border-radius: 5px;  
+	box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+	
+	
+	
+}
+
+button {
+   padding: 4px;
+   margin: 50px;
+}
+
+
+.button {
+	
+	
+	--border-size: 2px;
+	
+	
+	position: relative;
+	padding: 1.5em 3em;
+	border: 0;
+	background: transparent;
+	color: #e55743;
+	text-transform: uppercase;
+	letter-spacing: .25em;
+	cursor: pointer;
+	font-weight: bold;
+	border-radius: 5px;  
+	box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+	
+	
+	
+}
+#box-container{
+ 
+  background: #223;
+  border-top: solid;
+  border-color: #333;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+.box {
+   display: inline-block;
+   width: 150px;
+   height: 150px;
+   margin: 10px;
+   background-color: red;
+   transition: all 1s;
+ }
+ 
+ .box:hover {
+   width: 300px;
+   background-color: orange;
+ }
