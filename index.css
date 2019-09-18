@@ -47,11 +47,17 @@ body {margin: 0;}
     display: inline-block;
     text-align: center;
     margin-bottom: 3px;
+
 }
 .nav-item-link {
-  color: white;
+  color: #e55743;
   text-decoration: none;
-  text-align-last: center;
+  text-align-last: center; 
+  font-family: Arial;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .25em;
+  font-size: 65%;
 }
 .hamburger{
    grid-column: 4;
@@ -67,6 +73,9 @@ body {margin: 0;}
 .cell-3 {
    background: #222;
    grid-area: main;
+}
+h1{
+   color: lavender;
 }
 .cell-4 {
    display: none;
@@ -95,7 +104,6 @@ button {
 	font-weight: bold;
 	border-radius: 5px;  
 }
-
 @keyframes colors{
    0%      { background-position: 0 0;      }
    100%    { background-position: -613px 0;      }
