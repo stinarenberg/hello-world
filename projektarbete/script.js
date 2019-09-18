@@ -22,13 +22,15 @@ function toggleBoxes() {
     const circleRightEl = documnent.getElementById('changingcircle--right');
     const circleWrongEl = documnent.getElementById('changingcircle--wrong');
 
-    const circleRightIsExpanded = circleRightEl.className.search('changing-circle--expanded');
+    const circleRightIsExpanded = circleRightEl.classList.contains("changingcircle--expanded")
 
-    // truthy and falsy
-
+    // Om vi just nu visar den "korrekta" cirkeln
     if (circleRightIsExpanded) {
-        //  ...expandCircleWrong
-        //  ...hideCircleRight
+        // Tänk på att bevara övriga klasser
+        // Dölja den korrekta cirkeln
+        // Ta bort klassen changingcircle--expanded på rightEl
+        // Visa den inkorrekta
+        // Lägg till klassen changingcircle--expanded på wrongEl
     } else {
 
     }
