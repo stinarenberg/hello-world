@@ -10,12 +10,13 @@ function myFunction() {
 function hideFunction() {
     var hide = document.getElementById("box-container");
 
-    if (hide.style.display === "none") {
-        hide.style.display = "block";
-    } else {
+    if (hide.style.display === "block") {
         hide.style.display = "none";
+    } else {
+        hide.style.display = "block";
     }
 }
+
 
 
 function toggleBoxes() {

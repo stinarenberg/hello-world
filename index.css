@@ -10,7 +10,7 @@ body {margin: 0;}
    "main"
    "right"
    "footer";
-   grid-template-rows:   185px auto auto 35px;
+   grid-template-rows: 185px auto auto auto 35px;
 }
 .cell {
    color: white;
@@ -76,9 +76,12 @@ body {margin: 0;}
    grid-area: right;
 }
 .cell-5 {
-   background: rgb(70, 61, 53);
+   background: #222;
    grid-area: footer;
    width: 100%;
+   font-size: 70%;
+   padding: 10px;
+   color: rgb(138, 120, 105);
 }
 button {
    padding: 4px;

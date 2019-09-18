@@ -1,4 +1,5 @@
 #box-container{
+  display: none;
   background: #223;
   border-top: solid;
   border-color: #333;
