@@ -80,8 +80,7 @@ body {margin: 0;}
    color: rgb(138, 120, 105);
 }
 button {
-   padding: 4px;
-   margin: 50px;
+   margin: 85px;
 }
 .button{
 	--border-size: 2px;
@@ -129,12 +128,12 @@ button {
    }
    .cell-2 {
       display: grid;
-      background: rgb(83, 83, 83);
+      background: #222;
       grid-area: left;
    }
    .cell-4 {
       display: grid;
-      background: rgb(83, 83, 83);
+      background: #222;
       grid-area: right;
    }
  }
