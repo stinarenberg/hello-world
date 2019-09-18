@@ -6,11 +6,9 @@ body {margin: 0;}
    display: grid;
    grid-template-areas: 
    "header"
-   "left"
    "main"
-   "right"
    "footer";
-   grid-template-rows: 185px auto auto auto 35px;
+   grid-template-rows: 185px auto 35px;
 }
 .cell {
    color: white;
@@ -64,16 +62,14 @@ body {margin: 0;}
    color: white;
 }
 .cell-2 {
-   background: #222;
-   grid-area: left;
+   display: none;
 }
 .cell-3 {
    background: #222;
    grid-area: main;
 }
 .cell-4 {
-   background: #222;
-   grid-area: right;
+   display: none;
 }
 .cell-5 {
    background: #222;
@@ -130,5 +126,15 @@ button {
       display: flex;
       justify-content: space-around;
       grid-template-rows: auto;
+   }
+   .cell-2 {
+      display: grid;
+      background: rgb(83, 83, 83);
+      grid-area: left;
+   }
+   .cell-4 {
+      display: grid;
+      background: rgb(83, 83, 83);
+      grid-area: right;
    }
  }
