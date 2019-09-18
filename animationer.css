@@ -1,12 +1,10 @@
-.changingcircle {
-  display: none;
+.changingcircle{
+display: none;
 }
-
-.changingcircle--expanded {
+.changingcircle--expanded{
   display: block;
 }
-
-.changingcircle {
+#changingcircle--right {
     height: 250px;
     width: 250px;
     margin: 100px auto auto auto;
@@ -21,7 +19,7 @@
     animation-play-state: running; 
 }
 /* FEL ANIMATION */
-.changingcircle-2 {
+#changingcircle--wrong{
   height: 250px;
   width: 250px;
   margin: 100px auto auto auto;
