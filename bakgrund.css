@@ -17,7 +17,7 @@
   background-color: red;
   transition: all 1s;
 }
-.box:hover {
+.box:hover, .box:focus {
   width: 300px;
   background-color: orange;
 }
