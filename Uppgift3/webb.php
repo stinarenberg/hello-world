@@ -10,17 +10,6 @@
     .nav-link{
         color: white;
     }
-    .products{
-      display: inline-block;
-      list-style-type:none;
-      border: solid 2px;
-      padding: 10px;
-      width: 350px;
-      height: 400px;
-    }
-    .name{
-      font-weight: bold;
-    }
     img{
       width: auto;
       height: 200px;
