@@ -20,7 +20,7 @@ $array= json_decode($json, true);
 // echo"</pre>";
 
 
-foreach($array as $key => $value){
+foreach($array ["dogs"] as $key => $value){
     echo "<div class='card'>";
     echo $value['Bild']; //<img src="..." class="card-img-top" alt="...">
     echo "<div class='card-body'>";

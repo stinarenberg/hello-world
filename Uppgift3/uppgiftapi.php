@@ -1,12 +1,6 @@
 <?php
 header("Content-Type: application/json; charset=UTF-8");
 
-$limit = 10;
-
-if(isset($_GET['limit'])){
-    $limit = $_GET['limit']; 
-}
-
 $corgi=[
     "Produkt"=>"Corgi", 
     "Pris"=>"22kr", 
@@ -36,14 +30,30 @@ $husky=[
     "Pris"=>"22kr", 
     "Bild"=>"<img src='http://localhost/backend/Uppgift3/husky.jpg'>", 
     "Beskrivning"=>"Beskrivning av produkt."];
-    
-$dogs = array(
-    $corgi, 
-    $granddanois, 
-    $schafer, 
-    $franskbulldog, 
-    $husky);
+// //Nedanför: multidimensionell array med dogs som rubrik
+// $dogs = array(
+//     "dogs" => [$corgi, 
+//     $granddanois, 
+//     $schafer, 
+//     $franskbulldog, 
+//     $husky]);
 
+
+$limit = 10; //defaultvärde
+if(isset($_GET["limit"])){ // kontrollerar om det finns data i min getrequest 
+    $limit = $_GET["limit"]; //50
+}
+
+//Multidimensionell array i for-loop.
+$dogs =[];
+//fungerar nu en multidimensionell array som heter dogs med alla hundar i - fungerar inte med "limit".  
+for($i=0; $i<$limit ; $i++):
+    $dogs = array("dogs" => [$corgi, 
+        $granddanois, 
+        $schafer, 
+        $franskbulldog, 
+        $husky]);
+endfor;
 
 $json = json_encode($dogs, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
 
