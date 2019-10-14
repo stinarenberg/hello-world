@@ -1,61 +1,39 @@
 <?php
 header("Content-Type: application/json; charset=UTF-8");
 
-$corgi=[
-    "Produkt"=>"Corgi", 
-    "Pris"=>"22kr", 
-    "Bild"=>"<img src='http://localhost/backend/Uppgift3/corgi.jpg'>", 
-    "Beskrivning"=>"Beskrivning av produkt."];
+$produkt=["Ros", "Maskros", "Orkidee", "Lilja", "Blåklocka", "Solros", "Vitsippa","Äppleträd", "Vinbärsbuske","Fikonträd"];
 
-$granddanois=[
-    "Produkt"=>"Grand Danois", 
-    "Pris"=>"22kr", 
-    "Bild"=>"<img src='http://localhost/backend/Uppgift3/granddanois.jpg'>", 
-    "Beskrivning"=>"Beskrivning av produkt."];
+$pris=["22kr", "12kr", "33kr", "44kr", "55kr", "66kr", "77kr", "88kr", "99kr", "100kr"];
 
-$schafer=[
-    "Produkt"=>"Schäfer", 
-    "Pris"=>"22kr", 
-    "Bild"=>"<img src='http://localhost/backend/Uppgift3/schafer.jpg'>", 
-    "Beskrivning"=>"Beskrivning av produkt."];
+$bild=["<img src='http://localhost/backend/uppgift3/bilder/ros.jpg'>", "<img src='http://localhost/backend/uppgift3/bilder/maskros.jpg'>",
+        "<img src='http://localhost/backend/uppgift3/bilder/orchids.jpg'>", "<img src='http://localhost/backend/uppgift3/bilder/lily.jpg'>", 
+        "<img src='http://localhost/backend/uppgift3/bilder/blue-bell.jpg'>", "<img src='http://localhost/backend/uppgift3/bilder/solros.jpg'>", 
+        "<img src='http://localhost/backend/uppgift3/bilder/vitsippa.jpg'>", "<img src='http://localhost/backend/uppgift3/bilder/apple.jpg'>",
+        "<img src='http://localhost/backend/uppgift3/bilder/vinbar.jpg'>", "<img src='http://localhost/backend/uppgift3/bilder/fikon.jpg'>"];
 
-$franskbulldog=[
-    "Produkt"=>"Fransk Bulldog", 
-    "Pris"=>"22kr", 
-    "Bild"=>"<img src='http://localhost/backend/Uppgift3/franskbulldog.jpg'>", 
-    "Beskrivning"=>"Beskrivning av produkt."];
+$beskrivning=["Röd", "Gul", "Rosa", "Orange", "Blå", "Gul", "Vit", "Gul", "Grön", "Gul"];
 
-$husky=[
-    "Produkt"=>"Husky",
-    "Pris"=>"22kr", 
-    "Bild"=>"<img src='http://localhost/backend/Uppgift3/husky.jpg'>", 
-    "Beskrivning"=>"Beskrivning av produkt."];
-// //Nedanför: multidimensionell array med dogs som rubrik
-// $dogs = array(
-//     "dogs" => [$corgi, 
-//     $granddanois, 
-//     $schafer, 
-//     $franskbulldog, 
-//     $husky]);
-
-
-$limit = 10; //defaultvärde
-if(isset($_GET["limit"])){ // kontrollerar om det finns data i min getrequest 
-    $limit = $_GET["limit"]; //50
+$limit = 10; 
+if(isset($_GET["limit"])){  
+    $limit = $_GET["limit"]; 
 }
 
-//Multidimensionell array i for-loop.
-$dogs =[];
-//fungerar nu en multidimensionell array som heter dogs med alla hundar i - fungerar inte med "limit".  
-for($i=0; $i<$limit ; $i++):
-    $dogs = array("dogs" => [$corgi, 
-        $granddanois, 
-        $schafer, 
-        $franskbulldog, 
-        $husky]);
-endfor;
+$blommor =[];
 
-$json = json_encode($dogs, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
+for($i=0; $i<$limit ; $i++):
+    
+    $blomma=array(
+        "produkt" => $produkt[$i],
+        "pris" => $pris[$i],
+        "bild" => $bild[$i],
+        "beskrivning"=>$beskrivning[$i],
+        "lager" => $randLager =rand(0,50)
+    );
+
+    $blommor[]=$blomma;
+endfor;
+            
+$json = json_encode($blommor, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
 
 echo $json;
 

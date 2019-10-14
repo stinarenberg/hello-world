@@ -1,7 +1,11 @@
 <?php
+
+
+// Hämta antal med GET länkar?
+
 // 1. ange en endpoint (resurs, resource)
 //skapa en variabel för din endpoint
-$url = "http://localhost/backend/Uppgift3/uppgiftapi.php";
+$url = "http://localhost/backend/uppgift3/uppgiftapi.php?limit=5";
 
 // 2. hämta data
 //metod i PHP file_get_contents - lagra i en variabel.
@@ -20,23 +24,20 @@ $array= json_decode($json, true);
 // echo"</pre>";
 
 
-foreach($array ["dogs"] as $key => $value){
-    echo "<div class='card'>";
-    echo $value['Bild']; //<img src="..." class="card-img-top" alt="...">
-    echo "<div class='card-body'>";
-    echo "<h5 class='card-title'>";
-    echo $value['Produkt'];
-    echo "</h5>";
-    echo "<p class='card-text'>";
-    echo $value ['Beskrivning']."<br>";
-    echo "<button type='button' class='btn btn-info'>Köp</button>";
-    echo "</p>";
-    echo "<p class='card-text'><small class='text-muted'>";
-    echo $value ['Pris']."<br>" ; 
-    echo "</small></p>";
-    echo "</div>";
-    echo "</div>";
+echo "<ul>";
+foreach($array as $key => $value){
+    echo "<li>";
+    echo $value["bild"];
+    echo "<br>";
+    echo $value["produkt"] . " ";
+    echo $value ["pris"]  . " ";
+    echo $value ["beskrivning"]  . " ";
+    echo "i lager:";
+    echo $value ["lager"]  . " ";
+    echo "</li>";
 }
+echo "</ul>";
+
 
 
 ?>

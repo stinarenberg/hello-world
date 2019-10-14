@@ -10,14 +10,31 @@
     .nav-link{
         color: white;
     }
-    img{
+    .flex-container{
+      display: flex;
+      justify-content: center;
+
+    }
+    .kort{
+      width: 200px;
+    }
+    img {
       width: auto;
-      height: 200px;
+      height:100px;
+    }
+    footer{
+      text-align: center;
+      background-color: #343a40;
+      color: #fff;
+      padding: 1rem;
+    }
+    ul{
+      list-style: none;
     }
     </style>
 </head>
 <body>
-<nav class="navbar navbar-dark bg-info text-white">
+<nav class="navbar navbar-dark bg-dark">
   <!-- Navbar content -->
   <ul class="nav">
   <li class="nav-item">
@@ -32,25 +49,19 @@
 </ul>
 </nav>
 
-<div class="container" class="alert alert-success" role="alert">
+
 <h1 class="display-3">Välkommen till vår Webbshop!</h1>
 
 <h2>Produkter</h2>
-
-<div class="card-deck">
+<div class="flex-container">
 <?php 
+
     include 'getapi.php';
 ?>
 </div>
-</div>
 
 
+<footer>&copy Rasmus och Stina - 2019</footer>
 
-
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
