@@ -1,29 +1,22 @@
 <?php
 // 1. ange en endpoint (resurs, resource)
-//skapa en variabel för din endpoint - avsluta med länkar - ?limit=5 .
+//skapa en variabel för din endpoint
 $limit = 10; 
 
-//har formulär i webb.php istället
-
-// echo "<a href='?limit=5'>Visa 5 produkter</a>";
-// echo "<br>";
-// echo "<a href='?limit=10'>Visa alla produkter</a>"; 
-// echo "<br>";
-// echo "<a href='?limit=20'>Visa 20 produkter - test</a>"; 
-// echo "<br>";
-
 if(isset($_GET['limit'])) {
-    if($_GET['limit'] > 10){
-        echo "För många produkter - max 10";
+
+    $getlimit = htmlspecialchars($_GET['limit']);
+    if (!is_numeric($getlimit)) {
+        echo "error: $getlimit ej giltigt - använd 1-10"; //jsonformat.
         return;
     }
-    if($_GET['limit'] < 1){
-        echo "För få produkter, välj minst 1";
+    if($getlimit <1 || $getlimit >10){
+        echo ("Error: min 1 - max 10");
         return;
     }
-    echo "Visar: ".$_GET['limit'] . " produkter.";
+
+    echo "Visar: ". $getlimit . " produkter.";
         $link ="http://localhost/backend/uppgift3/uppgiftapi.php?limit=";
-        $getlimit = $_GET['limit'];
         $url = $link.=$getlimit;
     echo "<br>";
     } 

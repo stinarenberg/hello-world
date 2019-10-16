@@ -21,24 +21,20 @@
 </ul>
 </nav>
 
-<div class="kontainer" class="alert1 alert-success2" role="alert">
+<div class="kontainer alert1 alert-success2" role="alert">
 <h1 class="display-3">Välkommen till vår webbshop!</h1>
 
 <h2>Produkter:</h2>
 <form action="#" method="GET"> 
         Antal produkter: <br>
-        <input type="number" name="limit"> 
-
+        <input type="text" name="limit"> 
         <input type="submit" value="Visa" class="submitbtn">
     </form>
 
 
-<?php 
-    include 'getapi.php';
-?>
+    <?php include 'getapi.php'; ?>
 
-
-<footer>&copy Rasmus och Stina - 2019</footer>
+<footer> &copy; Rasmus och Stina - Backend 2019</footer>
 </div>
 </body>
 </html>
